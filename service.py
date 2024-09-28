@@ -4,7 +4,6 @@ import uuid
 from websockets import broadcast
 
 from models import UNITY_CLIENTS, WEB_CLIENTS, Client
-from server import logger
 
 
 def get_client_by_websocket(websocket):
@@ -12,7 +11,7 @@ def get_client_by_websocket(websocket):
         for client in elem:
             if client.websocket is websocket:
                 return client
-    logger.warning("Client not found!")
+    # logger.warning("Client not found!")
 
 
 async def handle_client_enter(msg, websocket):
